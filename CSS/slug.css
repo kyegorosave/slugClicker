@@ -1,0 +1,74 @@
+#game-area {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    border: 1px solid #000;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.slug {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    background-size: cover;
+}
+
+#score-timer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: lightgrey;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+#time-left {
+    height: 20px;
+    background-color: green;
+    color: white;
+    text-align: center;
+    line-height: 20px;
+    width: 100%;
+}
+
+#start-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 10;
+}
+#end-game-button {
+    display: block;
+    margin: 20px auto; /* Centered and placed below the game area */
+    font-size: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+#score-result {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.party-animation {
+    font-size: 48px;
+    animation: partyAnim 1s infinite;
+}
+
+.giant-L {
+    font-size: 144px;
+    color: red;
+}
+
+@keyframes partyAnim {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
