@@ -120,6 +120,7 @@ $(document).ready(function() {
                 left: Math.floor(Math.random() * (gameArea.width() - 60)),
                 backgroundImage: 'url(Images/8bit-slug.png)' // Path to slug image
             }).click(function() {
+                showFeedbackText($(this), "+1");
                 $(this).effect('explode', 500, function() { $(this).remove(); });
                 score++;
                 updateUI();
@@ -137,6 +138,7 @@ $(document).ready(function() {
             left: Math.floor(Math.random() * (gameArea.width() - 60)),
             backgroundImage: 'url(Images/red-slug.png)'
         }).click(function() {
+            showFeedbackText($(this), "Game Over");
             endGame(); // End the game if a red slug is clicked
         });
 
@@ -151,6 +153,7 @@ $(document).ready(function() {
             left: Math.floor(Math.random() * (gameArea.width() - 60)),
             backgroundImage: 'url(Images/green-slug.png)'
         }).click(function() {
+            showFeedbackText($(this), "+2");
             $(this).effect('explode', 500, function() { $(this).remove(); });
             score += 2; // Double points for green slug
             updateUI();
@@ -180,6 +183,17 @@ $(document).ready(function() {
         }, 50);
     }
 
+    //Function to show the feedback numbers when the slugs are pressed----------------------------------------------------------------
+    function showFeedbackText(slugElement, text) {
+        let feedback = $('<div class="feedback-text">' + text + '</div>');
+        feedback.css({
+            top: slugElement.position().top,
+            left: slugElement.position().left
+        });
+        gameArea.append(feedback);
+        feedback.fadeOut(1000, function() { $(this).remove(); });
+    }
+    
     createGameUI();
 
     // Event listener for the end game button-------------------------------------------
