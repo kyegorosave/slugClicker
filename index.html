@@ -5,16 +5,52 @@
     <title>Slug Clicker Game</title>
     <link rel="stylesheet" href="./CSS/slug.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script> <!-- Added jQuery UI for explode effect -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 </head>
 <body>
-    <div id="game-area">
-        <div id="score-timer">
-            <div id="time-left">30</div> <!-- Changed to a div for the dynamic bar -->
-            seconds left | Score: <span id="score">0</span>
+    <!--SlugClicker logo at the top of the page-->
+    <div id="logo-container">
+        <img id="slug-logo" src="./Images/slugclick-logo.png" alt="Slug">
+        <img id="clicker-logo" src="path_to_clicker_image.jpg" alt="Clicker">
+    </div>√
+    <!--Content for the speed control slider-->
+    <div id="speed-control">
+        <label for="speed-slider">Slug Speed: <span id="speed-value">14</span></label>
+        <input type="range" id="speed-slider" min="1" max="30" value="14">
+    </div>
+    <!--Game area where the slugs appear and stuff-->
+    <div id = "game-container">
+        <div id="game-area">
+            <!--Score and timer display-->
+            <div id="score-timer">
+                <div id="time-left"></div>
+                seconds left | Score: <span id="score">0</span>
+            </div>
+        </div>
+        <!--Rules of the game brah-->
+        <div id="game-rules">
+            <h3>Game Rules</h3>
+            <ul>
+                <li>CLICK AS MANY SLUGS AS YOU CAN IN 30 SECONDS</li>
+                <li>RED SLUG = GAME OVER</li>
+                <li>GREEN SLUG = WORTH 2 POINTS</li>
+                <li>YELLOW SLUG = 1 POINT</li>
+                <li>14 IS BASE SPEED, BUT FEEL FREE TO INCREASE IT TO WHATEVER YOU WANT</li>
+            </ul>
         </div>
     </div>
-    <button id = "end-game-button">End Game</button>
+    <!--Button to end the game-->
+    <button id="end-game-button">End Game</button>
+    <!--End screen with slug fact and play again option-->
+    <div id="end-screen" style="display: none;">
+        <div id="slug-fact">
+            <h3>Fun Fact About Banana Slugs!</h3>
+            <p id="fact-text"></p>
+            <img src="./Images/8bit-slug.png" alt="Banana Slug" style="width:100px;height:100px;">
+        </div>
+        <button id="play-again-button">Play Again</button>
+    </div>
+    <!--JavaScript for the game-->
     <script src="./JavaScript/slug.js"></script>
 </body>
 </html>

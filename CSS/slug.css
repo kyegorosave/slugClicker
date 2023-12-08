@@ -1,13 +1,19 @@
+#game-container {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin: 20px auto;
+}
+
 #game-area {
     position: relative;
     width: 800px;
     height: 600px;
     border: 1px solid #000;
-    margin: 20px auto;
     overflow: hidden;
 }
 
-.slug {
+.slug, .red-slug, .green-slug {
     position: absolute;
     width: 100px;
     height: 100px;
@@ -34,41 +40,85 @@
     width: 100%;
 }
 
-#start-button {
-    position: absolute;
+#end-game-button, #play-again-button {
+    display: block;
+    margin: 20px auto;
+    font-size: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#end-screen {
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 20px;
-    padding: 10px 20px;
-    cursor: pointer;
-    z-index: 10;
+    background-color: white;
+    padding: 20px;
+    border: 2px solid #000;
+    z-index: 100;
 }
-#end-game-button {
-    display: block;
-    margin: 20px auto; /* Centered and placed below the game area */
-    font-size: 20px;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-#score-result {
+
+#slug-fact {
     text-align: center;
-    font-size: 24px;
-    margin-top: 20px;
 }
 
-.party-animation {
-    font-size: 48px;
-    animation: partyAnim 1s infinite;
+#speed-control {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.giant-L {
-    font-size: 144px;
-    color: red;
+#speed-slider {
+    width: 200px;
+    margin: 0 10px;
+    vertical-align: middle;
 }
 
-@keyframes partyAnim {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
+#game-rules {
+    width: 200px;
+    padding: 10px;
+    background-color: rgb(242, 251, 171);
+    border: 1px solid #000;
+    box-sizing: border-box;
+    text-align: center;
+    margin-left: 20px;
+}
+
+#game-rules h3 {
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+#game-rules ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#game-rules li {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+@media (max-width: 960px) {
+    #game-container {
+        flex-direction: column;
+    }
+
+    #game-rules {
+        margin-left: 0;
+        margin-top: 20px;
+        width: auto;
+    }
+}
+#logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#slug-logo, #clicker-logo {
+    width: 250px; /* Adjust as needed */
+    height: 250px; /* Adjust as needed */
+    background-color: none; /* Placeholder color */
+    display: inline-block; /* Display side by side */
+    margin: 0 10px; /* Space between the images */
 }
