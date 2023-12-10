@@ -50,7 +50,7 @@ $(document).ready(function() {
 
     // Function to start the game---------------------------------------------------------------------------
     function startGame() {
-        $('#end-game-button').show();
+        $('#end-game-button').show(); 
         $(this).hide();
         score = 0;
         timeLeft = 30;
