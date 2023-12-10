@@ -2,7 +2,7 @@
     slug.js - This JavaScript file contains all the functionality for the Slug Clicker game.
     Requirements: jQuery must be loaded for this script to work.
     Authors: Kye Gorosave, Corey Haro, Leyton Philbrook, Parker Ehlers
-    Date: November 26, 2023
+    Date: December 9, 2023
 */
 
 $(document).ready(function() {
@@ -60,8 +60,10 @@ $(document).ready(function() {
             updateTimer();
         }, 1000);
 
-        // Play the background music---------------------------------------------------------------------------
-        //$('#background-music')[0].play();
+        // Play the game audio
+        var gameAudio = $('#game-audio')[0];
+        gameAudio.currentTime = 30; // Start 30 seconds into the song
+        gameAudio.play();
     }
 
     // Function to update the timer ---------------------------------------------------------------------------
@@ -80,9 +82,10 @@ $(document).ready(function() {
     displayScoreResult();
     $('#end-game-button').hide();
 
-    // Stop the background music---------------------------------------------------------------------------
-    //$('#background-music')[0].pause();
-    //$('#background-music')[0].currentTime = 0;
+     // Stop the game audio
+     var gameAudio = $('#game-audio')[0];
+     gameAudio.pause();
+     gameAudio.currentTime = 0;
 
     // Select a random fun fact about banana slugs---------------------------------------------------------------------------
     const randomFact = bananaSlugFacts[Math.floor(Math.random() * bananaSlugFacts.length)];
@@ -112,7 +115,7 @@ $(document).ready(function() {
         let randomChance = Math.random();
         if (randomChance < 0.1) {
             generateRedSlug();
-        } else if (randomChance < 0.2) { // 10% chance for a green slug
+        } else if (randomChance < 0.2) { // 20% chance for a green slug
             generateGreenSlug();
         } else {
             let slug = $('<div class="slug"></div>').css({

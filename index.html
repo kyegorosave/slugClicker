@@ -6,12 +6,16 @@
     <link rel="stylesheet" href="./CSS/slug.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <!--Font used-->
+    <link href="https://fonts.cdnfonts.com/css/eight-bit-dragon" rel="stylesheet">
 </head>
 <body>
+    <!--MP3 File for the game music-->
+    <audio id="game-audio" src="./Music/Sunshine_in_Hawaii.mp3" type="audio/mpeg"></audio>
     <!--SlugClicker logo at the top of the page-->
     <div id="logo-container">
         <img id="slug-logo" src="./Images/slugclick-logo.png" alt="Slug">
-        <img id="clicker-logo" src="./Images/slugclick-logo.png" alt="Clicker">
+        <img id="clicker-logo" src="./Images/clicker-logo.png" alt="Clicker">
     </div>√
     <!--Content for the speed control slider-->
     <div id="speed-control">
@@ -19,8 +23,8 @@
         <input type="range" id="speed-slider" min="1" max="30" value="14">
     </div>
     <!--Game area where the slugs appear and stuff-->
-    <div id = "game-container">
-        <div id="game-area">
+    <div id="game-container">
+        <div id="game-area" style="background-image: url('./Images/slug-background.png');">
             <!--Score and timer display-->
             <div id="score-timer">
                 <div id="time-left"></div>
@@ -32,9 +36,9 @@
             <h3>Game Rules</h3>
             <ul>
                 <li>CLICK AS MANY SLUGS AS YOU CAN IN 30 SECONDS</li>
-                <li>RED SLUG = GAME OVER</li>
-                <li>GREEN SLUG = WORTH 2 POINTS</li>
-                <li>YELLOW SLUG = 1 POINT</li>
+                <li><span style="color:red">RED</span> SLUG = GAME OVER</li>
+                <li><span style="color:green">GREEN</span> SLUG = 2 POINTS</li>
+                <li><span style="color:rgb(110, 110, 25)">YELLOW</span> SLUG = 1 POINT</li>
                 <li>14 IS BASE SPEED, BUT FEEL FREE TO INCREASE IT TO WHATEVER YOU WANT</li>
             </ul>
         </div>
