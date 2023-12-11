@@ -5,6 +5,14 @@
     Date: December 10, 2023
 */
 
+//Function that lets multiple slugs fall at the same time. KEEPS EM COMING
+function startSlugGeneration() {
+    const slugGenerationInterval = setInterval(() => {
+        generateSlug();
+    }, 500); // Adjust time as needed for slug generation frequency
+
+    return slugGenerationInterval;
+}
 //Function that loads the random cat image API and then sends the data to 'output' in the HTML. Not the head honcho. Not the creme de la creme.
 function loadRandomCatImage() {
     $.ajax({
