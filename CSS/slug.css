@@ -16,13 +16,13 @@ body {
 /*Where the slusg actually come from and stuff*/
 #game-area {
     position: relative;
-    width: 709px; /* Increased width */
-    height: 700px; /* Increased height */
+    width: 709px; 
+    height: 700px; 
     border: 1px solid #000;
     overflow: hidden;
-    background-size: contain; /* Ensures the whole image is visible */
+    background-size: contain; 
     background-repeat: no-repeat;
-    background-position: center center; /* Centers the image */
+    background-position: center center;
     margin-left: 192px;
 }
 /*Changing the sluss that fall*/
@@ -155,7 +155,7 @@ body {
     margin: 0 10px;
 
 }
-/*Start and End button styling*/
+/*Start and End button styling: Button template found from https://getcssscan.com/css-buttons-examples*/
 button {
     font-size: 16px;
     letter-spacing: 2px;
@@ -171,14 +171,35 @@ button {
     touch-action: manipulation;
     font-family: 'Eight Bit Dragon', sans-serif;   
 }
+/*https://getcssscan.com/css-buttons-examples*/
 .button:active {
     box-shadow: 0px 0px 0px 0px;
     top: 5px;
     left: 5px;
   }
-  
+/*https://getcssscan.com/css-buttons-examples*/
   @media (min-width: 768px) {
     .button {
       padding: 0.25em 0.75em;
     }
   }
+  /*Button styling for the little easter egg cat API*/
+  #cat-image-button {
+    display: block;
+    width: 100px; /* Adjust as needed */
+    height: auto;
+    cursor: pointer;
+    margin: 20px auto 0;
+    margin-top: 350px;
+}
+
+#output {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#output img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid black;
+}

@@ -2,9 +2,27 @@
     slug.js - This JavaScript file contains all the functionality for the Slug Clicker game.
     Requirements: jQuery must be loaded for this script to work.
     Authors: Kye Gorosave, Corey Haro, Leyton Philbrook, Parker Ehlers
-    Date: December 9, 2023
+    Date: December 10, 2023
 */
 
+//Function that loads the random cat image API and then sends the data to 'output' in the HTML. Not the head honcho. Not the creme de la creme.
+function loadRandomCatImage() {
+    $.ajax({
+        url: "https://api.thecatapi.com/v1/images/search",
+        data: {},
+        type: "GET",
+        dataType: "json",
+        success: function (data) {
+            const catData = data[0];
+            $("#output").html("<img src='" + catData.url + "' style='width: 100%; height: auto;'>");
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log("Error:", textStatus, errorThrown);
+        }
+    });
+}
+
+//Function that has EVERYTHINGGGGG. The main Man. The head honcho. The creme de la creme. The top dawg. the man. the myrh. the legend. 
 $(document).ready(function() {
     //Defining variables and constants---------------------------------------------------------------------------
     const gameArea = $('#game-area');
@@ -113,7 +131,7 @@ $(document).ready(function() {
     // Function to generate and place a new slug on the screen---------------------------------------------------------------------------
     function generateSlug() {
         let randomChance = Math.random();
-        if (randomChance < 0.1) {
+        if (randomChance < 0.1) { //10% chance for a red slug
             generateRedSlug();
         } else if (randomChance < 0.2) { // 20% chance for a green slug
             generateGreenSlug();
@@ -212,12 +230,12 @@ $(document).ready(function() {
 
     // Event listener for closing the end screen---------------------------------------------------------------------------
     $('#close-end-screen').click(function() {
-        $('#end-screen').hide();
+        $('#end-screen').hide(); 
     });
 
     // Event listener for the play again button---------------------------------------------------------------------------
     $('#play-again-button').click(function() {
-        $('#end-screen').hide();
+        $('#end-screen').hide(); //hides the send screen when you want to play again
         createGameUI();
     });
 
